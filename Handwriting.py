@@ -1,7 +1,8 @@
 # Importing the dataset with Keras and transforming it
 from keras.datasets import mnist
 from keras import backend as K
-import numpy as np_utils
+from keras.utils.np_utils import to_categorical
+
 def mnist_data():
     # input image dimensions
     img_rows, img_cols = 28, 28
