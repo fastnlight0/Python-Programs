@@ -24,3 +24,26 @@ def mnist_data():
     Y_test = np_utils.to_categorical(Y_test, 10)
     return (X_train, Y_train), (X_test, Y_test)
 (X_train, Y_train), (X_test, Y_test) = mnist_data()
+
+# defining the model
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Flatten
+from keras.layers import Conv2D, MaxPooling2D
+def network():
+    model = Sequential()
+    input_shape = (28, 28, 1)
+    num_classes = 10
+    model.add(Conv2D(filters=32, kernel_size=(3, 3), padding='same', activation='relu', input_shape=input_shape))
+    model.add(MaxPooling2D(pool_size=2))
+    model.add(Conv2D(filters=32, kernel_size=2, padding='same', activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Conv2D(filters=32, kernel_size=2, padding='same', activation='relu'))
+    model.add(MaxPooling2D(pool_size=(2, 2)))
+    model.add(Dropout(0.3))
+    model.add(Flatten())
+    model.add(Dense(500, activation='relu'))
+    model.add(Dropout(0.4))
+    model.add(Dense(num_classes, activation='softmax'))
+    # summarize the model
+    # model.summary()
+    return model
