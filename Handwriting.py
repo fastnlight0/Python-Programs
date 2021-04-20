@@ -4,6 +4,9 @@ from keras import backend as K
 import keras
 from keras.utils import np_utils
 from keras.utils.np_utils import to_categorical
+import matplotlib.pyplot as plt
+import matplotlib.cm as cm
+import numpy as np
 
 def mnist_data():
     # input image dimensions
@@ -30,6 +33,21 @@ def mnist_data():
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
 from keras.layers import Conv2D, MaxPooling2D
+# visualize one number with pixel values
+def visualize_input(img, ax):
+    ax.imshow(img, cmap='gray')
+    width, height = img.shape
+    thresh = img.max()/2.5
+    for x in range(width):
+        for y in range(height):
+            ax.annotate(str(round(img[x][y],2)), xy=(y,x),
+                        horizontalalignment='center',
+                        verticalalignment='center',
+                        color='white' if img[x][y]<thresh else 'black')
+fig = plt.figure(figsize = (12,12)) 
+ax = fig.add_subplot(111)
+visualize_input(X_train[0], ax)
+
 def network():
     model = Sequential()
     input_shape = (28, 28, 1)
