@@ -1,6 +1,7 @@
 # Importing the dataset with Keras and transforming it
 from keras.datasets import mnist
 from keras import backend as K
+import keras
 from keras.utils import np_utils
 from keras.utils.np_utils import to_categorical
 
