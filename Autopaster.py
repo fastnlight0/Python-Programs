@@ -7,10 +7,12 @@ while True:
 os.write(1, b"STARTING!\n")
 if count == "":
     while True:
+        # Windows users: replace 'command' with ctrl
         pyautogui.hotkey('command', 'v')
         pyautogui.press('enter')
 else:
     for i in range(int(count)):
+        # Windows users: replace 'command' with ctrl
         pyautogui.hotkey('command', 'v')
         pyautogui.press('enter')
     os.write(1, b"DONE!\n")
