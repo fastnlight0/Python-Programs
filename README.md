@@ -1,5 +1,11 @@
 # Python-Programs
 This is where I like to keep my python programs. Enjoy
+## Requirements for programs:
+These programs require pyautogui, which can be installed with:
+```
+pip install pyautogui
+```
+
 ## How to use programs:
 ### Autoclicker:
 S to start <br>
@@ -9,11 +15,11 @@ While stopped, X to kill program<br><br>
 S to start <br>
 Put mouse in any corner of your <b><u>main</u></b> screen to kill <br><br>
 <b><u>For windows users:</u></b><br><br>
-Replace
+Replace:
 ```python
 pyautogui.hotkey('command', 'v')
 ```
-with
+with:
 ```python
 pyautogui.hotkey('ctrl', 'v')
 ```
