@@ -32,3 +32,6 @@ pyautogui.hotkey('ctrl', 'v')
 ### Autotyper
 S to start <br>
 C to kill
+
+
+[![CodeQL](https://github.com/fastnlight0/Python-Programs/actions/workflows/codeql-analysis.yml/badge.svg?branch=master)](https://github.com/fastnlight0/Python-Programs/actions/workflows/codeql-analysis.yml)
