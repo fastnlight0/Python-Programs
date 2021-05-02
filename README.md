@@ -5,6 +5,10 @@ These programs require pyautogui, which can be installed with:
 ```
 pip install pyautogui
 ```
+They also require keyboard which can be installed with:
+```
+pip install keyboard
+```
 
 ## How to use programs:
 ### Autoclicker:
