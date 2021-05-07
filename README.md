@@ -1,14 +1,11 @@
 # Python-Programs
 This is where I like to keep my python programs. Enjoy
 ## Requirements for programs:
-These programs require pyautogui, which can be installed with:
+These programs require pyautogui and keyboard, which can be installed by running
 ```
-pip install pyautogui
+pip install -r requirements.txt
 ```
-They also require keyboard which can be installed with:
-```
-pip install keyboard
-```
+in the project directory
 
 ## How to use programs:
 ### Autoclicker:
