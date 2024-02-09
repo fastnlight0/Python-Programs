@@ -1,9 +1,5 @@
-
-# importing time and threading
-import os
-import time
-import threading
-
+# importing os, platform, time and threading
+import os, platform, time, threading
 # pynput.keyboard is used to watch events of
 # keyboard for start and stop of auto-clicker
 from pynput.keyboard import Listener, Key, Controller
@@ -13,6 +9,10 @@ from pynput.keyboard import Listener, Key, Controller
 # control the auto-clicker
 delay = 0.03
 button = 'v'
+command = Key.ctrl
+if platform.system() == "Darwin":
+    # MacOS code
+    command = Key.cmd
 start_stop_key = Key(Key.f4)
 stop_key = Key(Key.f3)
 
@@ -51,7 +51,7 @@ class ClickMouse(threading.Thread):
         os.write(1, b"Program online!\n")
         while self.program_running:
             while self.running:
-                with keyboard.pressed(Key.cmd):
+                with keyboard.pressed(command):
                     keyboard.press(self.button)
                     keyboard.release(self.button)
                 keyboard.press(Key.enter)
