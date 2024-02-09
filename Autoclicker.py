@@ -1,4 +1,3 @@
-#!/opt/homebrew/bin/python3
 # importing time and threading
 import os
 import time
